@@ -1,3 +1,8 @@
+.jumbotron {
+    text-align: center;
+}
+
+
 #map {
     height: 400px;
     width: 50%;
@@ -5,4 +10,12 @@
 
 .listingContainer{
     border: 1px black solid;
+}
+
+
+
+input[type="text"]{
+    width: 20%;
+    padding 10px 15px;
+    margin: 0px;
 }
