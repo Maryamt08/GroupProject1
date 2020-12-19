@@ -6,3 +6,12 @@
 .listingContainer{
     border: 1px black solid;
 }
+
+body{
+    background-image: url("liveworkplayhome.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+
+
