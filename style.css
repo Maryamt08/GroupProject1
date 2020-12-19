@@ -2,7 +2,6 @@
     text-align: center;
 }
 
-
 #map {
     height: 400px;
     width: 50%;
@@ -15,12 +14,12 @@
 
 body{
     background-image: url("liveworkplayhome.jpg");
-    background-color: #cccccc;
     background-repeat: no-repeat;
     background-size: 100% 100%;
+    background-attachment: fixed;
+    background-size: cover;
 }
 
- 
  
 input[type="text"]{
     width: 20%;
@@ -28,7 +27,6 @@ input[type="text"]{
     margin: 0px;
 }
 
-  
   
 button {
     background-color: white;
