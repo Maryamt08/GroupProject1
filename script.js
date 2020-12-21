@@ -75,7 +75,13 @@ $(document).ready(function () {
                 $.ajax(zomatoQuery).done(function (zomatoResponse) {
                     console.log(zomatoResponse);
                     var nlIndex = zomatoResponse.popularity.nightlife_index;
-
+                    var linkToZomatoSite = zomatoResponse.link;
+                    var areaInfo = $("#areaInfo");
+                    var zomatoATag = $("<a>");
+                    zomatoATag.attr("href", linkToZomatoSite);
+                    zomatoATag.text("Go To Zomato");
+                    areaInfo.append(zomatoATag);
+                    console.log(linkToZomatoSite);
 
                     //forloop containing the indevidual containers and information pushed to the DOM
                     for (var i = 0; i < rentalList.length; i++) {
