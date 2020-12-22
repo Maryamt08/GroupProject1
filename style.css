@@ -2,6 +2,11 @@
     text-align: center;
 }
 
+.nav-wrapper{
+    display: inline;
+    float: left;
+}
+
 #map {
     height: 400px;
     width: 50%;
@@ -22,11 +27,20 @@
 body{
     background-image: url("liveworkplayhome.jpg");
     background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-attachment: fixed;
     background-size: cover;
 }
+.search-container{
+    width:110% 
+}
 
+.container{
+    width: 33.33%;
+    padding: 50px;
+    text-align: left;
+    font-size: 25px;
+    color: white;
+}
+  
 body::before {
     content: "";
     position: absolute;
@@ -45,13 +59,12 @@ input[type="text"]{
 }
 
   
-button {
-    background-color: white;
-    color: black;
-    border: 1px solid #555555;
+button{
+    border: 1px solid #111010;
+    color: rgb(20, 20, 20);
+    display: inline-block;
+    font-size: 16px;
+    height: 60px;
   }
 
-  
-  
-  
 
