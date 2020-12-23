@@ -51,14 +51,8 @@ $(document).ready(function () {
                 }
             };
 
-            $.ajax(housingQuery).then((result) => {
-                
-            }).catch((err) => {
-                
-            });(function (rentalList) {
+            $.ajax(housingQuery).done(function (rentalList) {
                 console.log(rentalList);
-
-
 
                 //ajax request for the local bars and restaurants through zomatoAPI
                 var zomatoAPIKey = "ea6e879245c6df1e9d1d3c63e8cd78a1"
