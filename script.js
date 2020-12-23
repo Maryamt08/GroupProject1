@@ -54,8 +54,6 @@ $(document).ready(function () {
             $.ajax(housingQuery).done(function (rentalList) {
                 console.log(rentalList);
 
-
-
                 //ajax request for the local bars and restaurants through zomatoAPI
                 var zomatoAPIKey = "ea6e879245c6df1e9d1d3c63e8cd78a1"
 
@@ -72,7 +70,7 @@ $(document).ready(function () {
                     }
                 };
 
-                $.ajax(zomatoQuery).done(function (zomatoResponse) {
+                $.ajax(zomatoQuery).then(function (zomatoResponse) {
                     console.log(zomatoResponse);
                     var nlIndex = zomatoResponse.popularity.nightlife_index;
                     var linkToZomatoSite = zomatoResponse.link;
