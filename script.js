@@ -51,7 +51,11 @@ $(document).ready(function () {
                 }
             };
 
-            $.ajax(housingQuery).done(function (rentalList) {
+            $.ajax(housingQuery).then((result) => {
+                
+            }).catch((err) => {
+                
+            });(function (rentalList) {
                 console.log(rentalList);
 
 
@@ -72,7 +76,7 @@ $(document).ready(function () {
                     }
                 };
 
-                $.ajax(zomatoQuery).done(function (zomatoResponse) {
+                $.ajax(zomatoQuery).then(function (zomatoResponse) {
                     console.log(zomatoResponse);
                     var nlIndex = zomatoResponse.popularity.nightlife_index;
                     var linkToZomatoSite = zomatoResponse.link;
