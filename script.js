@@ -9,6 +9,18 @@ $(document).ready(function () {
         var zip = $("#zip").val();
 
 
+
+        clearPrev();
+        renderResults();
+
+
+        //Allows us to clear previous search results and find a new list of addresses when input 
+        function clearPrev(){
+            $("#testView").empty();
+            $("#areaInfo").empty();
+        }
+
+        function renderResults(){
         //ajax request for the geocode(longitude and latitude) to be input to the google maps and zomato
         var geocode = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + city + state + zip + "&key=AIzaSyBsK6ftRatc2anAUk0KLTWAehPJlklUeC8"
 
@@ -54,8 +66,6 @@ $(document).ready(function () {
             $.ajax(housingQuery).done(function (rentalList) {
                 console.log(rentalList);
 
-
-
                 //ajax request for the local bars and restaurants through zomatoAPI
                 var zomatoAPIKey = "ea6e879245c6df1e9d1d3c63e8cd78a1"
 
@@ -72,7 +82,7 @@ $(document).ready(function () {
                     }
                 };
 
-                $.ajax(zomatoQuery).done(function (zomatoResponse) {
+                $.ajax(zomatoQuery).then(function (zomatoResponse) {
                     console.log(zomatoResponse);
                     var nlIndex = zomatoResponse.popularity.nightlife_index;
                     var linkToZomatoSite = zomatoResponse.link;
@@ -82,8 +92,9 @@ $(document).ready(function () {
                     zomatoATag.text("Go To Zomato");
                     areaInfo.append(zomatoATag);
                     console.log(linkToZomatoSite);
+                    
 
-                    //forloop containing the indevidual containers and information pushed to the DOM
+                    //forloop containing the individual containers and information pushed to the DOM
                     for (var i = 0; i < rentalList.length; i++) {
                         listingContainer = $("<div>")
                         addTitle = $("<h1>").text(rentalList[i].formattedAddress);
@@ -91,7 +102,7 @@ $(document).ready(function () {
                         propType = $("<p>").text(rentalList[i].propertyType);
                         sqrFoot = $("<p>").text(rentalList[i].squareFootage + " Square Feet");
                         nightLife = $("<p>").text("Nightlife Index: " + nlIndex);
-
+                        
 
                         listingContainer.attr("class", "listingContainer");
                         listingContainer.append(addTitle, price, propType, sqrFoot, nightLife);
@@ -108,6 +119,12 @@ $(document).ready(function () {
             initMap();
         });
 
+        $("#address").val("");
+        $("#city").val("");
+        $("#state").val("");
+        $("#zip").val("");
+        
+    }
 
     });
 });

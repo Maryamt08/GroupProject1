@@ -1,32 +1,83 @@
 .jumbotron {
     text-align: center;
+    background-image: url("liveworkplayhome.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
+
+.display-4{
+    color:black;
+}
+
+.lead{
+    color: black;
+}
+
+.nav-wrapper{
+    display: inline;
+    float: left;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 200px;
+  }
+  
+  li a {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    font-size: 20px;
+  }
+  
+  li a:hover {
+    background-color: #555;
+    color: white;
+  }
+
 
 #map {
     height: 400px;
-    width: 50%;
+    width: 40%;
     float: left;
+    margin-left: 2%;
+    
 }
 
 .listingContainer{
     border: 1px black solid;
+    margin: 2%;
+    width: 80%;
+    float: left;
+    padding: 2%;
+    border-radius: 10px;
+    box-shadow: darkgray 0px 0px 20px;
   
 }
 
 #areaInfo {
-    width: 50%;
+    margin-right: 5%;
     float: right;
-    height: 400px;
+    width: 40%;
+    height: 25%;
+
 }
 
-body{
-    background-image: url("liveworkplayhome.jpg");
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-attachment: fixed;
-    background-size: cover;
+.search-container{
+    width:110% 
 }
 
+.container{
+    width: 33.33%;
+    padding: 50px;
+    text-align: left;
+    font-size: 25px;
+    color: white;
+}
+  
 body::before {
     position: absolute;
     top: 0px;
@@ -44,13 +95,10 @@ input[type="text"]{
 }
 
   
-button {
-    background-color: white;
-    color: black;
-    border: 1px solid #555555;
+button{
+    border: 1px solid #111010;
+    color: rgb(20, 20, 20);
+    display: inline-block;
+    font-size: 16px;
+    height: 60px;
   }
-
-  
-  
-  
-
