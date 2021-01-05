@@ -1,7 +1,19 @@
 $(document).ready(function () {
 
 
+    const API_KEY = "AIzaSyBsK6ftRatc2anAUk0KLTWAehPJlklUeC8";
+
+    $("#address").on("change", function(){
+        let full_address = $(this).val();
+        _log(full_address);
+    }); 
+
+
     $("#button").on("click", function () {
+
+
+
+       
 
         var address = $("#address").val();
         var city = $("#city").val();
@@ -22,7 +34,7 @@ $(document).ready(function () {
 
         function renderResults(){
         //ajax request for the geocode(longitude and latitude) to be input to the google maps and zomato
-        var geocode = "https://maps.googleapis.com/maps/api/geocode/json?address=" + address + city + state + zip + "&key=AIzaSyBsK6ftRatc2anAUk0KLTWAehPJlklUeC8"
+        var geocode = `https://maps.googleapis.com/maps/api/geocode/json?address=${address},${city},${state},${zip}&key=${API_KEY}`;
 
         $.ajax({
             method: "GET",
@@ -128,3 +140,7 @@ $(document).ready(function () {
 
     });
 });
+
+function _log(s){
+    console.log(s); 
+}
