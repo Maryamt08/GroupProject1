@@ -11,10 +11,6 @@ $(document).ready(function () {
 
     $("#button").on("click", function () {
 
-
-
-       
-
         var address = $("#address").val();
         var city = $("#city").val();
         var state = $("#state").val();
@@ -101,8 +97,9 @@ $(document).ready(function () {
                     var areaInfo = $("#areaInfo");
                     var zomatoATag = $("<a>");
                     zomatoATag.attr("href", linkToZomatoSite);
+                    zomatoATag.attr("class", "linkToZomatoSite btn btn-primary");
                     zomatoATag.text("Go To Zomato");
-                    areaInfo.append(zomatoATag);
+                    $(".container").prepend(zomatoATag);
                     console.log(linkToZomatoSite);
                     
 
