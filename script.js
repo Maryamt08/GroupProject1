@@ -11,12 +11,12 @@ $(document).ready(function () {
 
     $("#button").on("click", function () {
 
+
         addressVal = $("#address").val();
 
         if(addressVal === ""){
             M.toast({html: 'Input an address!'})
         }
-
 
         var address = $("#address").val();
         var city = $("#city").val();
@@ -78,6 +78,7 @@ $(document).ready(function () {
                         "x-rapidapi-host": "realty-mole-property-api.p.rapidapi.com"
                     }
                 };
+
 
                 $.ajax(housingQuery).done(function (rentalList) {
                     console.log(rentalList);
@@ -154,6 +155,33 @@ $(document).ready(function () {
                         }
 
                     });
+                $.ajax(zomatoQuery).then(function (zomatoResponse) {
+                    console.log(zomatoResponse);
+                    var nlIndex = zomatoResponse.popularity.nightlife_index;
+                    var linkToZomatoSite = zomatoResponse.link;
+                    var areaInfo = $("#areaInfo");
+                    var zomatoATag = $("<a>");
+                    zomatoATag.attr("href", linkToZomatoSite);
+                    zomatoATag.attr("class", "linkToZomatoSite btn btn-primary");
+                    zomatoATag.text("Go To Zomato");
+                    $(".container").prepend(zomatoATag);
+                    console.log(linkToZomatoSite);
+                    
+
+                    //forloop containing the individual containers and information pushed to the DOM
+                    for (var i = 0; i < rentalList.length; i++) {
+                        listingContainer = $("<div>")
+                        addTitle = $("<h1>").text(rentalList[i].formattedAddress);
+                        price = $("<h4>").text("$ " + rentalList[i].price);
+                        propType = $("<p>").text(rentalList[i].propertyType);
+                        sqrFoot = $("<p>").text(rentalList[i].squareFootage + " Square Feet");
+                        nightLife = $("<p>").text("Nightlife Index: " + nlIndex);
+                        
+
+                        listingContainer.attr("class", "listingContainer");
+                        listingContainer.append(addTitle, price, propType, sqrFoot, nightLife);
+
+                        $("#testView").append(listingContainer);
 
                 });
 
