@@ -74,7 +74,6 @@ nav {
 }
 
 .linkToZomatoSite {
-     
     display: block;
     margin: 5%;
     width: 81%;
@@ -85,7 +84,7 @@ nav {
 #areaInfo {
     margin-right: 5%;
     float: right;
-    width: 40%;
+    width: 80%;
     height: 25%;
 
 }
