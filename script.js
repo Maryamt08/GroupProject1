@@ -183,12 +183,14 @@ $(document).ready(function () {
 
                         $("#testView").append(listingContainer);
 
-                });
+                };
+            });
 
                 initMap();
 
 
-            });
+            
+        });
 
             $("#address").val("");
             $("#city").val("");
@@ -196,7 +198,7 @@ $(document).ready(function () {
             $("#zip").val("");
 
         }
-
+            )};
     });
 });
 
