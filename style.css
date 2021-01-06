@@ -30,7 +30,7 @@ nav {
 }
 
 #testView {
-
+    position:static; 
 }
 
 /* ul {
@@ -56,21 +56,35 @@ nav {
 
 #map {
     height: 400px;
-    width: 40%;
-    float: left;
-    margin-left: 2%;
+    width: 80%;
+
+    margin-left: auto;
+    clear: both;
+    margin-right: auto;
+
     
 }
 
 .listingContainer{
     border: 1px black solid;
-    margin: 2%;
     width: 80%;
-    float: left;
+    margin-top:4%; 
+    margin-left:auto;
+    margin-right:auto;
     padding: 2%;
     border-radius: 10px;
+    background:white;
     box-shadow: darkgray 0px 0px 20px;
   
+}
+
+.linkToZomatoSite {
+     
+    display: block;
+    margin: 5%;
+    width: 81%;
+    margin-left: auto;
+    margin-right: auto; 
 }
 
 #areaInfo {
@@ -93,11 +107,14 @@ nav {
     padding: 50px;
     text-align: left;
     font-size: 25px;
-}
 
+    
+}
+/*
 .parallax-container {
     padding-top:3%; 
-}
+    position:static !important;
+}*/
   
 body::before {
     position: absolute;
@@ -106,6 +123,11 @@ body::before {
     bottom: 0px;
     left: 0px;
     background-color: rgba(0,0,0,0.25);
+}
+
+body {
+    background-image:url("plate.jpg"); 
+    background-repeat: repeat-y;
 }
 
  
@@ -144,24 +166,20 @@ button{
 
 
 .dl-footer {
-    background-color:#ee6e73; 
-
+    background-color:#ee6e73;
     width: 100%;
-    padding: 2%; 
+    clear:both; 
     position:static; 
     bottom:0;
-
+    
 }
+
+
 
 .dl-footer-content {
-
- width:50%; 
- float:left
-}
-
-
-.dl-footer-left{
-    width:50%; 
-
-
+    padding:15px; 
+    width: 50%;
+    float: left;
+    background-color: #ee6e73;
+    bottom: 0;
 }
