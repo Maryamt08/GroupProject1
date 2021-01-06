@@ -28,11 +28,6 @@ nav {
 .brand-logo img {
     height: 50px;
 }
-
-#testView {
-    position:static; 
-}
-
 /* ul {
     list-style-type: none;
     margin: 0;
@@ -67,10 +62,10 @@ nav {
 
 .listingContainer{
     border: 1px black solid;
-    width: 80%;
-    margin-top:4%; 
-    margin-left:auto;
-    margin-right:auto;
+
+    margin: 2%;
+    width: 90%;
+    float: left;
     padding: 2%;
     border-radius: 10px;
     background:white;
@@ -173,7 +168,23 @@ button{
     bottom:0;
     
 }
+.dl-footer-left{
+    width:50%; 
+}
+.miniMap{
+    float: right;
+    width: 50%;
+    height: 15rem;
+}
 
+.listingContent{
+    width: 45%;
+    float: left;
+}
+
+.zomatoATag{
+    cursor: pointer;
+    color: blue;
 
 
 .dl-footer-content {
