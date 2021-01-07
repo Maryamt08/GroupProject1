@@ -161,6 +161,7 @@ $(document).ready(function () {
                         }
 
                     });
+
                     $.ajax(zomatoQuery).then(function (zomatoResponse) {
                         console.log(zomatoResponse);
                         var nlIndex = zomatoResponse.popularity.nightlife_index;
