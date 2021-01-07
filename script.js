@@ -14,8 +14,10 @@ $(document).ready(function () {
 
         addressVal = $("#address").val();
 
-        if(addressVal === ""){
-            M.toast({html: 'Input an address!'})
+        if (addressVal === "") {
+            M.toast({
+                html: 'Input an address!'
+            })
         }
 
         var address = $("#address").val();
@@ -33,6 +35,7 @@ $(document).ready(function () {
         function clearPrev() {
             $("#testView").empty();
             $("#areaInfo").empty();
+
         }
 
         function renderResults() {
@@ -107,9 +110,11 @@ $(document).ready(function () {
                         var zomatoATag = $("<a>");
                         zomatoATag.attr("class", "zomatoATag")
 
-                        zomatoATag.on("click", function(){
+                        zomatoATag.on("click", function () {
                             var toastHTML = '<span>Leave this website?</span><button id="yes" class="btn-flat toast-action">YES</button><button id="no" class="btn-flat toast-action">NO</button>';
-                            M.toast({html: toastHTML});
+                            M.toast({
+                                html: toastHTML
+                            });
 
                             $("#yes").on("click", function () {
                                 window.location.href = linkToZomatoSite;
@@ -121,7 +126,8 @@ $(document).ready(function () {
                         })
 
                         zomatoATag.text("Go To Zomato");
-                        areaInfo.append(zomatoATag);
+                        zomatoATag.attr("class", "linkToZomatoSite btn btn-primary");
+                        areaInfo.prepend(zomatoATag);
                         console.log(linkToZomatoSite);
 
 
@@ -142,9 +148,9 @@ $(document).ready(function () {
 
                             var newMap = $("<iframe>");
                             newMap.attr("src", "https://www.google.com/maps/embed/v1/place?key=" + newMapAPI + "&q=" + nLon + "," + nLat)
-                            newMap.attr("class", "miniMap"); 
+                            newMap.attr("class", "miniMap");
 
-                            
+
                             listingContent.attr("class", "listingContent");
                             listingContent.append(price, propType, sqrFoot, nightLife)
                             listingContainer.attr("class", "listingContainer");
@@ -155,51 +161,58 @@ $(document).ready(function () {
                         }
 
                     });
-                $.ajax(zomatoQuery).then(function (zomatoResponse) {
-                    console.log(zomatoResponse);
-                    var nlIndex = zomatoResponse.popularity.nightlife_index;
-                    var linkToZomatoSite = zomatoResponse.link;
-                    var areaInfo = $("#areaInfo");
-                    var zomatoATag = $("<a>");
-                    zomatoATag.attr("href", linkToZomatoSite);
-                    zomatoATag.attr("class", "linkToZomatoSite btn btn-primary");
-                    zomatoATag.text("Go To Zomato");
-                    $(".container").prepend(zomatoATag);
-                    console.log(linkToZomatoSite);
-                    
+                    $.ajax(zomatoQuery).then(function (zomatoResponse) {
+                        console.log(zomatoResponse);
+                        var nlIndex = zomatoResponse.popularity.nightlife_index;
+                        var linkToZomatoSite = zomatoResponse.link;
+                        var areaInfo = $("#areaInfo");
+                        var zomatoATag = $("<a>");
+                        zomatoATag.attr("href", linkToZomatoSite);
+                        zomatoATag.attr("class", "linkToZomatoSite btn btn-primary");
+                        zomatoATag.text("Go To Zomato");
+                        $(".container").prepend(zomatoATag);
+                        console.log(linkToZomatoSite);
 
-                    //forloop containing the individual containers and information pushed to the DOM
-                    for (var i = 0; i < rentalList.length; i++) {
-                        listingContainer = $("<div>")
-                        addTitle = $("<h1>").text(rentalList[i].formattedAddress);
-                        price = $("<h4>").text("$ " + rentalList[i].price);
-                        propType = $("<p>").text(rentalList[i].propertyType);
-                        sqrFoot = $("<p>").text(rentalList[i].squareFootage + " Square Feet");
-                        nightLife = $("<p>").text("Nightlife Index: " + nlIndex);
-                        
+                        function clearPrev() {
+                            $("#zoma").empty();
+                            $("#areaInfo").empty();
 
-                        listingContainer.attr("class", "listingContainer");
-                        listingContainer.append(addTitle, price, propType, sqrFoot, nightLife);
+                        }
 
-                        $("#testView").append(listingContainer);
-
-                };
-            });
-
-                initMap();
+                        //forloop containing the individual containers and information pushed to the DOM
+                        for (var i = 0; i < rentalList.length; i++) {
+                            listingContainer = $("<div>")
+                            addTitle = $("<h1>").text(rentalList[i].formattedAddress);
+                            price = $("<h4>").text("$ " + rentalList[i].price);
+                            propType = $("<p>").text(rentalList[i].propertyType);
+                            sqrFoot = $("<p>").text(rentalList[i].squareFootage + " Square Feet");
+                            nightLife = $("<p>").text("Nightlife Index: " + nlIndex);
 
 
-            
-        });
+                            listingContainer.attr("class", "listingContainer");
+                            listingContainer.append(addTitle, price, propType, sqrFoot, nightLife);
 
-            $("#address").val("");
-            $("#city").val("");
-            $("#state").val("");
-            $("#zip").val("");
+                            $("#testView").append(listingContainer);
 
-        }
-            )};
+                        };
+                    });
+
+                    initMap();
+
+
+
+                });
+
+                $("#address").val("");
+                $("#city").val("");
+                $("#state").val("");
+                $("#zip").val("");
+
+            })
+        };
     });
+    $('.scrollspy').scrollSpy();
+
 });
 
 function _log(s) {
