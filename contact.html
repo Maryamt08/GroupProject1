@@ -30,53 +30,14 @@
           <li><a href="./index.html">Home</a></li>
           <li><a href="#Contact">Contact</a></li>
           <li><a href="#About">About</a></li>
-          <li><a href="./contact.html">Our Team</a></li>
+          <li><a href="#OurTeam">Our Team</a></li>
         </ul>
       </div>
     </div>
   </nav>
 
-  <div class="parallax-container">
-    <div class="parallax">
-      <img src="liveworkplayhome.jpg" class="responsive-img"></img>
-    </div>
-  </div>
 
-  <div class="overlay text-center section white">
-    <h1 class="display-4">FIND THE PERFECT HOME FOR YOU</h1>
-    <p class="lead"> Keep the party going by finding a great place to live nearby! ENTER the name, address, city, state or zip code of your favorite gym, or
-      bar and we will help you find avaible homes in the area.
-    </p>
-    <div class="search-container">
-      <input type="text" id="address" placeholder="Street address">
-      <input type="text" id="city" placeholder="City">
-      <input type="text" id="state" placeholder="State">
-      <input type="text" id="zip" placeholder="Zip Code">
-      <button id="button" class="btn">Search</button>
-    </div>
-  </div>
-
-  <div class="parallax-container" id="">
-    <div class="parallax">
-      <img src="lwp2.jpg" class="responsive-img"></img>
-    </div>
-  </div>
-  <!-- Webpage Header -->
-
-
-  <div class="">
-
-<!-- // DBL comment  -->
-    
-
-
-  <div id="map"></div>
-
-  <div id="areaInfo"></div>
-
-  <div id="testView"></div>
-
-  <!-- Our Team
+  <!-- Our Team -->
   <div class=" overlay text-center section white">
   <section class="section scrollspy" id="OurTeam" >
     <div class="row">
@@ -125,46 +86,13 @@
       </div>
     </div>
   </section>
-  </div> -->
-
-
-<script src="./script.js"></script>
-
-
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
-integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous">
-</script>
-
-<script>
-$(".parallax").parallax();
-function activatePlacesSearch(){
-var input = document.getElementById('address');
-var autocomplete = new google.maps.places.Autocomplete(input); 
-autocomplete.addListener("place_changed", () => {
-  const place = autocomplete.getPlace();
-  if (place && place.geometry){
-  
-  let address = place.formatted_address.split(","); 
-  let street = address[0];
-  let city = address[1].trim();
-  let state= address[2].trim().split(" ")[0];
-  let zip = address[2].trim().split(" ")[1];
-  $("#zip").val(zip); 
-  $("#state").val(state); 
-  $("#city").val(city); 
-  $("#address").val(street); 
-  }
- 
-});
-
-}
-</script>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDA8Vir0kbeFAHcIPLq6B_VvfMkozpnVtM&libraries=places&callback=activatePlacesSearch"
-type="text/javascript"></script>
-
-
-
   </div>
+
+
+
+
+
+
 
   <div class='dl-footer'> 
     
@@ -190,15 +118,6 @@ type="text/javascript"></script>
   
 
 
-
-
-  <!-- Linked Script tags 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
-  </script>
-  -->
 
 
 

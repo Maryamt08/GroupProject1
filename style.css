@@ -6,9 +6,7 @@
     box-shadow: inset 0 -19px 0 28px rgba(0,0,0,0.15);
 }
 
-nav {
-    position:fixed !important; 
-}
+
 .display-4{
     color:black;
 }
@@ -120,8 +118,9 @@ body::before {
 }
 
 body {
-    background-image:url("plate.jpg"); 
+    background-image:url("liveworkplayhome.jpg"); 
     background-repeat: repeat-y;
+    background-size: cover;
 }
 
  
@@ -144,6 +143,7 @@ button{
 
   .btn {
       height:3rem!important;
+      offset: right;
   }
 
   #address {
@@ -184,8 +184,8 @@ button{
 .zomatoATag{
     cursor: pointer;
     color: blue;
-
 }
+
 
 .dl-footer-content {
     padding:15px; 
@@ -194,3 +194,14 @@ button{
     background-color: #ee6e73;
     bottom: 0;
 }
+    h2, p{
+    color: gray
+
+    }
+   .team-img{
+       width: 320px;
+       height:320px;
+   }
+   .team{
+       position: static
+   }
