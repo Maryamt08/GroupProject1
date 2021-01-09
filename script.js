@@ -1,7 +1,7 @@
 $(document).ready(function () {
 
 
-    const API_KEY = "AIzaSyBsK6ftRatc2anAUk0KLTWAehPJlklUeC8";
+    const API_KEY = "AIzaSyDA8Vir0kbeFAHcIPLq6B_VvfMkozpnVtM";
 
     $("#address").on("change", function () {
         let full_address = $(this).val();
@@ -77,7 +77,7 @@ $(document).ready(function () {
                     "url": "https://realty-mole-property-api.p.rapidapi.com/rentalListings?city=" + city + "&state=" + state,
                     "method": "GET",
                     "headers": {
-                        "x-rapidapi-key": "d59a39dd95msh51e63b60bc85ed6p12a346jsnf1aa477a274b",
+                        "x-rapidapi-key": "85cff8f76fmsh6f4cc8a705364b6p128135jsna04a075d1eae",
                         "x-rapidapi-host": "realty-mole-property-api.p.rapidapi.com"
                     }
                 };
@@ -87,7 +87,7 @@ $(document).ready(function () {
                     console.log(rentalList);
 
                     //ajax request for the local bars and restaurants through zomatoAPI
-                    var zomatoAPIKey = "ea6e879245c6df1e9d1d3c63e8cd78a1"
+                    var zomatoAPIKey = "2263be167aba0b06c717f0eca26c0a9b"
 
                     const zomatoQuery = {
                         "async": true,
@@ -95,7 +95,7 @@ $(document).ready(function () {
                         "url": "https://developers.zomato.com/api/v2.1/geocode?lat=" + lat + "&lon=" + lon,
                         "method": "POST",
                         "headers": {
-                            "user-key": "ea6e879245c6df1e9d1d3c63e8cd78a1"
+                            "user-key": "2263be167aba0b06c717f0eca26c0a9b"
                         },
                         "data": {
                             "accessToken": zomatoAPIKey
@@ -144,7 +144,7 @@ $(document).ready(function () {
                             var nLat = rentalList[i].longitude;
                             var nLon = rentalList[i].latitude;
 
-                            newMapAPI = "AIzaSyAh0hEtShkpG0MRtiEW4r5R56d3a4om-W4"
+                            newMapAPI = "AIzaSyDA8Vir0kbeFAHcIPLq6B_VvfMkozpnVtM"
 
                             var newMap = $("<iframe>");
                             newMap.attr("src", "https://www.google.com/maps/embed/v1/place?key=" + newMapAPI + "&q=" + nLon + "," + nLat)
